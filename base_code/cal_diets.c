@@ -43,16 +43,8 @@ void loadDiets(const char* DIETFILEPATH) {
 		}
     }
     fclose(file);
-    
-	//printing out the list of diets taken by diets.txt
-	printf("The list of diets: \n"); 
-	int i; 
-	for (i=0; i<diet_list_size; i++)
-	{
-		printf("%d. %s (%d kcal)\n", i+1, diet_list[i].food_name, diet_list[i].calories_intake);
-	}
-	printf("%d. Exit\n", i+1); //option for Exit
 }
+
 
 
 /*
@@ -68,8 +60,13 @@ void inputDiet(HealthData* health_data) {
     int choice, i;
     
     // ToCode: to provide the options for the diets to be selected
+    //printing out the list of diets taken by diets.txt
     printf("The list of diets:\n");
-    
+	for (i=0; i<diet_list_size; i++)
+	{
+		printf("%d. %s (%d kcal)\n", i+1, diet_list[i].food_name, diet_list[i].calories_intake);
+	}
+	printf("%d. Exit\n", i+1); //option for Exit
     
 	// ToCode: to enter the diet to be chosen with exit option
     

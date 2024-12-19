@@ -43,15 +43,6 @@ void loadExercises(const char* EXERCISEFILEPATH) {
 		}
     }
     fclose(file);
-	
-	//printing out the list of exercises taken by exercises.txt
-	printf("The list of exercises: \n"); 
-	int i;
-	for (i=0; i<exercise_list_size; i++)
-	{
-		printf("%d. %s (%d kcal burned per min.)\n", i+1, exercise_list[i].exercise_name, exercise_list[i].calories_burned_per_minute);
-	}
-	printf("%d. Exit\n", i+1); //option for Exit
 }
 
 
@@ -69,7 +60,13 @@ void inputExercise(HealthData* health_data) {
     int choice, duration, i;
     
     // ToCode: to provide the options for the exercises to be selected
+    //printing out the list of exercises taken by exercises.txt
     printf("The list of exercises: \n");
+	for (i=0; i<exercise_list_size; i++)
+	{
+		printf("%d. %s (%d kcal burned per min.)\n", i+1, exercise_list[i].exercise_name, exercise_list[i].calories_burned_per_minute);
+	}
+	printf("%d. Exit\n", i+1); //option for Exit
 
 
     // ToCode: to enter the exercise to be chosen with exit option
