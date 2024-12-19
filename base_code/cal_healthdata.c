@@ -33,18 +33,29 @@ void saveData(const char* HEALTHFILEPATH, const HealthData* health_data) {
     }
 
     // ToCode: to save the chosen exercise and total calories burned 
-    fprintf(file, "[Exercises] \n");
-    
+    fprintf(file, "[Exercises] \n"); //category for Exercises
+    for(i=0;i<health_data->exercise_count;i++)
+    {
+    	fprintf(file, "%s - %d kcal\n", health_data->exercises[i].exercise_name, health_data->finalcalofex[i]); //put chosen exercise name and calories burned by exercise in health_data.txt 
+	}
+	fprintf(file, "Total calories burned - %d kcal\n", health_data->total_calories_burned); //put total calories burned by exercises in health_data.txt
     
     // ToCode: to save the chosen diet and total calories intake 
-    fprintf(file, "\n[Diets] \n");
-
-
-
+    fprintf(file, "\n[Diets] \n"); //category for Diets
+    for(i=0;i<health_data->diet_count;i++)
+    {
+    	fprintf(file, "%s - %d kcal\n", health_data->diet[i].food_name, health_data->diet[i].calories_intake);  //put chosen food name and calories taken by diet in health_data.txt 
+	}
+	fprintf(file, "Total calories intake - %d kcal\n", health_data->total_calories_intake); //put total calories intake by diets in health_data.txt
+	
     // ToCode: to save the total remaining calrories
-    fprintf(file, "\n[Total] \n");
-    
-    
+    fprintf(file, "\n[Total] \n"); //category for Total
+    fprintf(file, "Basal metabolic rate - %d kcal\n", BASAL_METABOLIC_RATE); //put Basal metabolic rate in health_data.txt
+    //put the remaining calories by caculating total_caloreis_intake and Basal metabolic rate and total_calories_burned in health_data.txt
+    fprintf(file, "The remaining calories - %d kcal\n", health_data->total_calories_intake-BASAL_METABOLIC_RATE-health_data->total_calories_burned);
+   
+    fclose(file);
+    printf("success \n");
 }
 
 /*

@@ -91,6 +91,7 @@ void inputExercise(HealthData* health_data) {
 
     		// ToCode: to enter the selected exercise and total calcories burned in the health data
     		int finalcalofex = duration * exercise_list[choice-1].calories_burned_per_minute; //calculate the final burned calories of chosen exercise. [choice -1] since choice number was made with i+1
+			health_data->finalcalofex[health_data->exercise_count] = finalcalofex; // put the final burned calories of chosen exercise in health data structure
 			health_data->exercises[health_data->exercise_count] = exercise_list[choice-1]; //put the selected exercise(exercise_list[choice-1]) in health data structure. 
 			health_data->total_calories_burned += finalcalofex; //put the total burned calories caused by selected exercises(by adding final burned calories of each exercise) in health data structure
     		health_data->exercise_count++; //Increasing exercise_count since this num is alrelady done
