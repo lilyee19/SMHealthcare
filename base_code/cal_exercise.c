@@ -68,7 +68,6 @@ void inputExercise(HealthData* health_data) {
 	}
 	printf("%d. Exit\n", i+1); //option for Exit
 
-
     // ToCode: to enter the exercise to be chosen with exit option
 
  
