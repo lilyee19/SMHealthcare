@@ -69,7 +69,7 @@ void inputDiet(HealthData* health_data) {
 		printf("%d. Exit\n", i+1); //option for Exit
     
 	// ToCode: to enter the diet to be chosen with exit option
-    	printf("Select the desired number: ");
+    	printf("Choose (1-7): ");
     	scanf("%d", &choice);
     
     	if (choice == 7){ //When user chose option for Exit
