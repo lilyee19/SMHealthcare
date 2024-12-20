@@ -84,7 +84,7 @@ void inputExercise(HealthData* health_data) {
 		}
 		
 		//When user put invalid option
-		if (choice < 1 || choice > 7){ 
+		else if (choice < 1 || choice > 7){ 
 			printf("try again with valid option number\n");
 			continue;
 		}
