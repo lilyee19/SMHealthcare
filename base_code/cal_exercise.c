@@ -58,8 +58,6 @@ void loadExercises(const char* EXERCISEFILEPATH) {
 
 void inputExercise(HealthData* health_data) {
     int choice, duration, i;
-    health_data->exercise_count = 0; //Initialization of exercise_count variable in structure HealthData
-	health_data->total_calories_burned = 0; //Initialization of total_calories_burned variable in structure HealthData
     
     // ToCode: to provide the options for the exercises to be selected
     //printing out the list of exercises taken by exercises.txt

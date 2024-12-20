@@ -55,8 +55,6 @@ void loadDiets(const char* DIETFILEPATH) {
 
 void inputDiet(HealthData* health_data) {
     int choice, i;
-    health_data->diet_count = 0; //Initialization of diet_count variable in structure HealthData
-	health_data->total_calories_intake = 0; //Initialization of total_calories_intake variable in structure HealthData
     
     // ToCode: to provide the options for the diets to be selected
     while (1)
