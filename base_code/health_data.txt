@@ -1,13 +1,13 @@
 [Exercises] 
-running - 220 kcal
-riding - 225 kcal
-Total calories burned: 445 kcal
+running - 330 kcal
+pilates - 88 kcal
+Total calories burned: 418 kcal
 
 [Diets] 
-pizza - 900 kcal
+rice - 600 kcal
 salad - 70 kcal
-Total calories intake: 970 kcal
+Total calories intake: 670 kcal
 
 [Total] 
 Basal metabolic rate - 1300 kcal
-The remaining calories - -775 kcal
+The remaining calories - -1048 kcal
