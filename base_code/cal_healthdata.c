@@ -55,7 +55,6 @@ void saveData(const char* HEALTHFILEPATH, const HealthData* health_data) {
     fprintf(file, "The remaining calories - %d kcal\n", (health_data->total_calories_intake)-(BASAL_METABOLIC_RATE)-(health_data->total_calories_burned));
    
     fclose(file);
-    printf("success \n");
 }
 
 /*
@@ -95,9 +94,37 @@ void printHealthData(const HealthData* health_data) {
 	printf("Total calories intake: %d kcal\n", health_data->total_calories_intake); //printing out total calories intake by adding all chosen diets' calories
 	//printing out the ramaining calories by calculating total_caloreis_intake and Basal metabolic rate and total_calories_burned 
 	printf("The remaining calories: %d kcal\n", (health_data->total_calories_intake)-(BASAL_METABOLIC_RATE)-(health_data->total_calories_burned));
-    printf("=======================================================================\n \n");
-    
-	
-	// ToCode: to print out the recommendtaion depending on the current total calories burned and intake    
+    	
+    	
+	// ToCode: to print out the recommendation depending on the current total calories burned and intake    
 	printf("=======================================================================\n");
+	//when remaining calorie = 0
+	if((health_data->total_calories_intake)-(BASAL_METABOLIC_RATE)-(health_data->total_calories_burned) == 0){ 
+		printf("\nYou have consumed all your calories for today!"); //recommendation for remaining calorie = 0
+
+	//when remaining calories < 0
+	}else if ((health_data->total_calories_intake)-(BASAL_METABOLIC_RATE)-(health_data->total_calories_burned) < 0){ 
+		printf("\n[Warning]Too few calories!\n"); //recommendation for remaining calories < 0
+		// when calories intake == Basal Metabolic Rate
+		if ((health_data->total_calories_intake)==(BASAL_METABOLIC_RATE)){ 
+			printf("Your total calorie intake for today has reached your goal!"); //recommendation for calories intake == Basal Metabolic Rate
+		// when calories intake < Basal Metabolic Rate
+		}else if((health_data->total_calories_intake)<(BASAL_METABOLIC_RATE)){ 
+			printf("Your total calorie intake for today has not reached your goal, remember to eat more!"); //recommendation for calories intake < Basal Metabolic Rate
+		// when calories intake > Basal Metabolic Rate
+		}else{ 
+			printf("You have eaten more calories than planned today, buy you have exercised too much!"); //recommendation for calories intake > Basal Metabolic Rate
+		}
+	
+	//when remaining calories > 0 	
+	}else{ 
+		printf("\nPlease exercise for your health!\n"); //recommendation for remaining calories > 0
+		// when calories intake == Basal Metabolic Rate
+		if ((health_data->total_calories_intake)==(BASAL_METABOLIC_RATE)){
+			printf("Your total calorie intake for today has reached your goal!"); //recommendation for calories intake == Basal Metabolic Rate
+		// when calories intake < Basal Metabolic Rate
+		}else if((health_data->total_calories_intake)<(BASAL_METABOLIC_RATE)){
+			printf("Your total calorie intake for today has not reached your goal, remember to eat more!"); //recommendation for calories intake < Basal Metabolic Rate
+		}
+	}
 }
