@@ -3,7 +3,7 @@
 //  Diets for Calorie Diary
 //
 //  Created by Eunju Cha
-//
+//  Edited by Seoin Jhee
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -38,7 +38,7 @@ void saveData(const char* HEALTHFILEPATH, const HealthData* health_data) {
     {
     	fprintf(file, "%s - %d kcal\n", health_data->exercises[i].exercise_name, health_data->finalcalofex[i]); //put chosen exercise name and calories burned by exercise in health_data.txt 
 	}
-	fprintf(file, "Total calories burned - %d kcal\n", health_data->total_calories_burned); //put total calories burned by exercises in health_data.txt
+	fprintf(file, "Total calories burned: %d kcal\n", health_data->total_calories_burned); //put total calories burned by exercises in health_data.txt
     
     // ToCode: to save the chosen diet and total calories intake 
     fprintf(file, "\n[Diets] \n"); //category for Diets
@@ -46,7 +46,7 @@ void saveData(const char* HEALTHFILEPATH, const HealthData* health_data) {
     {
     	fprintf(file, "%s - %d kcal\n", health_data->diet[i].food_name, health_data->diet[i].calories_intake);  //put chosen food name and calories taken by diet in health_data.txt 
 	}
-	fprintf(file, "Total calories intake - %d kcal\n", health_data->total_calories_intake); //put total calories intake by diets in health_data.txt
+	fprintf(file, "Total calories intake: %d kcal\n", health_data->total_calories_intake); //put total calories intake by diets in health_data.txt
 	
     // ToCode: to save the total remaining calrories
     fprintf(file, "\n[Total] \n"); //category for Total

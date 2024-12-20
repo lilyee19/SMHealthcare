@@ -3,7 +3,7 @@
 //  Excercise for Calorie Diary
 //
 //  Created by Eunju Cha
-//
+//  Edited by Seoin Jhee
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -78,11 +78,11 @@ void inputExercise(HealthData* health_data) {
     		break;
 		}
 	
-		if (choice < 1 || choice > 7){ //If user put unvalid option
+		if (choice < 1 || choice > 7){ //If user put invalid option
 			printf("try again with valid option number\n");
 			continue;
 		}
-		else{ //when valid option was chosen
+		else{ //When valid option was chosen
     		// To enter the duration of the exercise
     		printf("Enter the duration of the exercise (in min.): ");
     		scanf("%d", &duration);

@@ -3,7 +3,7 @@
 //  Diets for Calorie Diary
 //
 //  Created by Eunju Cha
-//
+//  Edited by Seoin Jhee
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -74,12 +74,12 @@ void inputDiet(HealthData* health_data) {
     		break;
 		}
 	
-		if (choice < 1 || choice > 7){ //If user put unvalid option
+		if (choice < 1 || choice > 7){ //If user put invalid option
 			printf("try again with valid option number\n");
 			continue;
 		}
 		
-		else{ //when valid option was chosen
+		else{ //When valid option was chosen
 			// ToCode: to enter the selected diet in the health data
 			health_data->diet[health_data->diet_count] = diet_list[choice-1]; //put the selected diet(diet_list[choice-1]) in health data structure. [choice -1] since choice number was made with i+1
 	
